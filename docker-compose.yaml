@@ -1,0 +1,15 @@
+version: '3'
+services:
+ nagios:
+  image: jasonrivers/nagios
+  ports:
+   - 8081:80
+  environment:
+   - NAGIOSADMIN_USER=nagiosadmin
+   - NAGIOSAMDIN_PASS=nagios
+  volumes:
+   - ./etc/:/opt/nagios/etc/
+ nginx:
+  image: nginx
+  ports:
+   - 8082:80
